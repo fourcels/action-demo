@@ -1,4 +1,4 @@
-name: Greet Everyone
+name: Environment
 # This workflow is triggered on pushes to the repository.
 on: [push]
 
@@ -11,10 +11,7 @@ jobs:
     steps:
       # 此步骤使用 GitHub 的 hello-world-javascript-action：https://github.com/actions/hello-world-javascript-action
       - name: Hello world
-        uses: actions/hello-world-javascript-action@v1
-        with:
-          who-to-greet: 'Mona the Octocat'
-        id: hello
-      # 此步骤打印上一步操作的输出（时间）。
-      - name: Echo the greeting's time
-        run: echo 'The time was ${{ steps.hello.outputs.time }}.'
+        run: |
+          node --version
+          npm --version
+          yarn --version
